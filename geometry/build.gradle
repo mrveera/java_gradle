@@ -1,0 +1,27 @@
+group 'com.thoughtworks'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+
+sourceCompatibility = 1.8
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Area',
+                'Main-Class': 'AreaCalculator',
+                'Class-Path': 'basic.jar'
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compile name: "basic"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
